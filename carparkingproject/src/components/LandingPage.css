@@ -1,0 +1,75 @@
+/* Styling for the Register Now button */
+.btn-register {
+    background-color: #007bff; /* Bootstrap's primary color */
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 2px solid #007bff;
+  }
+  
+  .btn-register:hover {
+    background-color: #0056b3; /* Darker blue for hover */
+    border-color: #0056b3;
+    color: white;
+  }
+  
+  /* Styling for the Find Parking button */
+  .btn-find {
+    background-color: white;
+    color: #007bff; /* Blue text color */
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 2px solid #007bff;
+  }
+  
+  .btn-find:hover {
+    background-color: #f1f1f1; /* Light gray background on hover */
+    color: #0056b3; /* Darker blue text on hover */
+    border-color: #0056b3; /* Darker border on hover */
+  }
+  /* Style for the main image on the landing page */
+.landing-image {
+    width: 100%;  /* Make sure image takes the full width of its container */
+    height: auto;  /* Maintain aspect ratio */
+    border-radius: 12px;  /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Subtle shadow effect */
+    transition: transform 0.3s ease-in-out; /* Smooth transition effect */
+  }
+  
+  .landing-image:hover {
+    transform: scale(1.05);  /* Slight zoom effect on hover */
+  }
+  
+  /* Style for images in the "Parking Options" section */
+  .parking-image {
+    width: 100%;  /* Make sure image takes the full width of its container */
+    height: auto;  /* Maintain aspect ratio */
+    border-radius: 10px;  /* Rounded corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);  /* Larger shadow */
+    transition: transform 0.3s ease-in-out; /* Smooth zoom effect */
+  }
+  
+  .parking-image:hover {
+    transform: scale(1.05);  /* Slight zoom effect */
+    cursor: pointer;  /* Show pointer cursor on hover */
+  }
+  
+  /* Optional: For images inside key features, you can add a soft border or shadow */
+  .feature-image {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 1rem;  /* Space below the image */
+    border-radius: 50%;  /* Make the image circular */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  /* Subtle shadow for feature images */
+    transition: transform 0.3s ease-in-out; /* Smooth transition effect */
+  }
+  
+  .feature-image:hover {
+    transform: scale(1.1);  /* Slight zoom effect on hover */
+  }
+  
