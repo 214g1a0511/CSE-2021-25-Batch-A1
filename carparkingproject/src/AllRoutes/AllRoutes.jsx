@@ -7,7 +7,10 @@ import VehicleForm from '../components/VehicleForm'
 import VehicleType from '../components/VehicleType'
 import PaymentForm from '../components/PaymentForm'
 import PaymentSuccessPage from '../components/PaymentSuccessPage'
-import Dashboard from '../components/Dashboard'
+import Dashboard from '../components/BikeDashboard'
+import BikeDashboard from '../components/BikeDashboard'
+import CarDashboard from '../components/CarDashboard'
+import UserPage from '../components/UserPage'
 const AllRoutes = () => {
   return (
     <div>
@@ -19,7 +22,10 @@ const AllRoutes = () => {
             <Route path="/vehicleType" element={<VehicleType/>}></Route>
             <Route path="/paymentForm" element={<PaymentForm/>}></Route>
             <Route path="/paymentsuccess" element={<PaymentSuccessPage/>}></Route>
-            <Route path="/dashboard" element={<Dashboard/>}></Route>
+            <Route path="/bikedashboard" element={<BikeDashboard/>}></Route>
+            <Route path="/cardashboard" element={<CarDashboard/>}></Route>
+            <Route path="/userpage" element={<UserPage/>}></Route>
+
 
 
 

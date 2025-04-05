@@ -36,18 +36,15 @@ const VehicleType = () => {
                 <div className="card-text">
                   <div className="d-flex justify-content-between p-1">
                     <span>Hourly Rate</span>
-                    <span>$1/hour</span>
+                    <span>₹10/hour</span>
                   </div>
                   <div className="d-flex justify-content-between p-1">
                     <span>Daily Rate</span>
-                    <span>$5/day</span>
+                    <span>₹50/day</span>
                   </div>
-                  <div className="d-flex justify-content-between p-1">
-                    <span>Monthly Pass</span>
-                    <span>$30/month</span>
-                  </div>
+                  
                 </div>
-              <Link to={token?"/dashboard":"/login"}>  <button className="w-100 btn-secondary rounded">
+              <Link to={token?"/bikedashboard":"/login"}>  <button className="w-100 btn-secondary rounded">
                   Book Now
                 </button></Link>
               </div>
@@ -71,18 +68,15 @@ const VehicleType = () => {
                 <div className="card-text">
                   <div className="d-flex justify-content-between p-1">
                     <span>Hourly Rate</span>
-                    <span>$2/hour</span>
+                    <span>₹50/hour</span>
                   </div>
                   <div className="d-flex justify-content-between p-1">
                     <span>Daily Rate</span>
-                    <span>$10/day</span>
+                    <span>₹200/day</span>
                   </div>
-                  <div className="d-flex justify-content-between p-1">
-                    <span>Monthly Pass</span>
-                    <span>$80/month</span>
-                  </div>
+                  
                 </div>
-                <Link to={token?"/dashboard":"/login"}> <button class="w-100 btn-secondary rounded">Book Now</button></Link>
+                <Link to={token?"/cardashboard":"/login"}> <button class="w-100 btn-secondary rounded">Book Now</button></Link>
               </div>
             </div>
           </div>

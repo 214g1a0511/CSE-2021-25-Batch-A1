@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import signupIllustration from "../assets/signup.jpg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 // Add the path to your illustration
+import { toast,ToastContainer } from "react-toastify";
 
 // Make sure to replace this with your actual path
 
@@ -19,6 +20,8 @@ const Register = () => {
   });
 
   const [loading, setLoading] = useState(false);
+  const navigate=useNavigate()
+  // const [status,setStatus]=useState();
 
   const validateEmail = (email) => {
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -81,14 +84,30 @@ const Register = () => {
     console.log(registerDetails);
     setLoading(true);
     await axios
-      .post("http://localhost:2000/customer/register", registerDetails)
+      .post(`${process.env.REACT_APP_DB_API}/customer/register`, registerDetails)
       .then((res) => {
-        console.log(res);
+        console.log(res.status);
+        
+          navigate("/login")
         setLoading(false);
       })
       .catch((err) => {
-        console.log(err);
-        setLoading(false);
+        // console.log(err.response.status);
+        let status=err?.response?.status
+        if(status==400){
+          setLoading(false);
+
+          return toast.warning("User Already Exists",{className: "black-background",
+            progressClassName: "fancy-progress-bar",
+          })
+
+        }
+        else{
+          setLoading(false);
+
+          return toast.error("Something went wrong")
+
+        }
       });
   };
   return (
@@ -253,6 +272,7 @@ const Register = () => {
           </div>
         </div>
       </div>
+      <ToastContainer/>
     </main>
   );
 };

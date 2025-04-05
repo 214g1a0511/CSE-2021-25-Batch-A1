@@ -5,13 +5,15 @@ import App from "./App";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import { BrowserRouter } from "react-router-dom";
+import VehicleContext from "./Context/VehicleContext";
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <BrowserRouter>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  </BrowserRouter>
+  <VehicleContext>
+    <BrowserRouter>
+        <App />
+    </BrowserRouter>
+  </VehicleContext>
 );
 
 // If you want to start measuring performance in your app, pass a function

@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import loginIllustration from "../assets/login.jpg";
 import axios from "axios";
+import { toast, ToastContainer } from "react-toastify";
+import { Link, useNavigate } from "react-router-dom";
 const Login = () => {
   const [loginData, setLoginData] = useState({
     email_id: "",
     password: "",
   });
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -19,14 +22,14 @@ const Login = () => {
     e.preventDefault();
 
     await axios
-      .post("http://localhost:2000/customer/login", loginData)
+      .post(`${process.env.REACT_APP_DB_API}/customer/login`, loginData)
       .then((res) => {
         console.log(res);
-
         localStorage.setItem("token", res.data.token);
+        navigate("/");
       })
       .catch((err) => {
-        console.log(err);
+        return toast.error(err.response.message);
       });
   };
   return (
@@ -89,12 +92,14 @@ const Login = () => {
                   </div>
 
                   {/* Submit Button */}
-                  <button
-                    type="submit"
-                    className="btn-secondary w-100 mb-3 rounded"
-                  >
-                    Login
-                  </button>
+                  {/* <Link to="/"> */}
+                    <button
+                      type="submit"
+                      className="btn-secondary w-100 mb-3 rounded"
+                    >
+                      Login
+                    </button>
+                  {/* </Link> */}
 
                   {/* Forgot Password Link */}
                   <p className="text-center text-muted mb-0">
@@ -118,6 +123,7 @@ const Login = () => {
           </div>
         </div>
       </div>
+      <ToastContainer />
     </main>
   );
 };
